@@ -7,6 +7,7 @@ class CallApp {
   private readonly options: CallappOptions & { timeout: number };
 
   // Create an instance of CallApp
+  //默认参数merge
   constructor(options: CallappOptions) {
     const defaultOptions = { timeout: 2000 };
     this.options = Object.assign(defaultOptions, options);
@@ -89,11 +90,14 @@ class CallApp {
         (Browser.isWechat && Browser.semverCompare(Browser.getWeChatVersion(), '7.0.5') === -1) ||
         Browser.isWeibo
       ) {
+        //通过window.top.location.href
         evokeByLocation(appstore);
       } else if (Browser.getIOSVersion() < 9) {
+        //创建iframe
         evokeByIFrame(schemeURL);
         checkOpenFall = this.fallToAppStore;
       } else if (!supportUniversal || Browser.isQQ || Browser.isQQBrowser || Browser.isQzone) {
+        //通过a标签
         evokeByTagA(schemeURL);
         checkOpenFall = this.fallToAppStore;
       } else {

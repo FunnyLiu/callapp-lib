@@ -1,3 +1,33 @@
+
+# 源码分析
+
+## 文件结构
+
+``` bash
+/Users/liufang/openSource/FunnyLiu/callapp-lib
+├── src
+|  ├── browser.ts
+|  ├── evoke.ts
+|  ├── generate.ts
+|  ├── index.ts
+|  └── types.ts
+
+directory: 5 file: 29
+
+ignored
+
+```
+
+## 外部模块依赖
+
+![img](./outer.svg)
+
+## 内部模块依赖
+
+![img](./inner.svg)
+  
+
+
 # callapp-lib
 
 callapp-lib 是一个 H5 唤起 APP 的解决方案，能够满足大部分唤起客户端的场景，也预留了扩展口，帮你实现一些定制化的功能。
